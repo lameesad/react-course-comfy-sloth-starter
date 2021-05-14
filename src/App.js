@@ -1,56 +1,47 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Navbar, Sidebar, Footer } from './components'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, Sidebar, Footer } from "./components";
 
-import styled from 'styled-components'
-
-const Button = styled.button`
-background:green;
-color:white;
-`
-const Container = styled.div`
-background:red;
-color:white;
-font-size:2rem;
-.hero{
-  font-size:8rem;
-}
-`
-const Container2 = styled.div`
-background:red;
-color:white;
-font-size:2rem;
-.hero{
-  font-size:1rem;
-}
-`
-
-
+import {
+  Home,
+  Products,
+  SingleProduct,
+  About,
+  Cart,
+  Error,
+  Checkout,
+  Private,
+} from "./pages";
 
 function App() {
   return (
-    <div>
-      <h4>comfy sloth starter</h4>
-      <Button>Click me</Button>
-      <Container>
-        <div>
-          <h3>hello world</h3>
-          <div className="hero">
-            hero text
-          </div>
-        </div>
-      </Container>
-
-      <Container2>
-        <div>
-          <h3>hello world</h3>
-          <div className="hero">
-            hero text
-          </div>
-        </div>
-      </Container2>
-    </div>
-  )
+    <Router>
+      <Navbar />
+      <Sidebar />
+      <switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+        <Route exact path="/products">
+          <Products />
+        </Route>
+        <Route exact path="/products/:id" children={<SingleProduct />} />
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </switch>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;
