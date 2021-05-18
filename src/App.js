@@ -22,17 +22,17 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/about">
+        <Route path="/about">
           <About />
         </Route>
-        <Route exact path="/cart">
+        <Route path="/cart">
           <Cart />
         </Route>
-        <Route exact path="/products">
+        <Route path="/products">
           <Products />
         </Route>
-        <Route exact path="/products/:id" children={<SingleProduct />} />
-        <Route exact path="/checkout">
+        <Route path="/products/:id" children={<SingleProduct />} />
+        <Route path="/checkout">
           <Checkout />
         </Route>
         <Route path="*">
