@@ -11,8 +11,9 @@ const Contact = () => {
           printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy
        </p>
-        <form className="contact-form">
-          <input type="email" className="form-input" placeholder="enter email" />
+        <form action="https://formspree.io/f/mayaeljp"
+          method="POST" className="contact-form">
+          <input type="email" className="form-input" placeholder="enter email" name="_replyto" />
           <button type="submit" className="submit-btn">subscribe</button>
         </form>
       </div>
