@@ -35,9 +35,9 @@ function App() {
         <Route path="/checkout">
           <Checkout />
         </Route>
-        <Route path="*">
+        {/* <Route path="*">
           <Error />
-        </Route>
+        </Route> */}
       </switch>
       <Footer />
     </Router>
