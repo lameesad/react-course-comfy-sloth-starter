@@ -1,8 +1,26 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const ProductImages = () => {
-  return <h4>product images</h4>
+//first the images are undefined, then they load
+// so we use ES6 by default if its undefined set to empty array
+const ProductImages = ({ images = [{ url: '' }] }) => {
+  const [main, setMain] = useState(images[0])
+  return <Wrapper>
+    <img src={main.url} alt="main image" className="main" />
+    <div className="gallery">
+      {images.map((image, index) => {
+        return (
+          <img
+            key={index}
+            src={image.url}
+            alt={image.filename}
+            onClick={() => setMain(images[index])}
+            className={`${image.url === main.url ? 'active' : null}`}
+          />
+        )
+      })}
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
