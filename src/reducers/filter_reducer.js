@@ -56,6 +56,17 @@ const filter_reducer = (state, action) => {
     return { ...state, filtered_products: tempProducts }
   }
 
+  if (action.type === UPDATE_FILTERS) {
+    const { name, value } = action.payload
+    //when putting [name] means setting the property dynamically
+    return { ...state, filters: { ...state.filters, [name]: value } }
+  }
+
+  if (action.type = FILTER_PRODUCTS) {
+    console.log('Filtered products')
+    return { ...state }
+  }
+
 
   throw new Error(`No Matching "${action.type}" - action type`)
 }
