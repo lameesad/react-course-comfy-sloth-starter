@@ -7,14 +7,22 @@ import { FilterProvider } from "./context/filter_context";
 import { CartProvider } from "./context/cart_context";
 import { UserProvider } from "./context/user_context";
 import { Auth0Provider } from "@auth0/auth0-react";
-
+// dev-mv97mx2f.us.auth0.com
+// pAbFok3v27v4sBYFPimyZMMVeVT38o5M
 ReactDOM.render(
-  <ProductsProvider>
-    <FilterProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </FilterProvider>
-  </ProductsProvider>,
+  <Auth0Provider
+    domain="dev-mv97mx2f.us.auth0.com"
+    clientId="pAbFok3v27v4sBYFPimyZMMVeVT38o5M"
+    redirectUri={window.location.origin}
+    cacheLocation="localstorage"
+  >
+    <ProductsProvider>
+      <FilterProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </FilterProvider>
+    </ProductsProvider>
+  </Auth0Provider>,
   document.getElementById("root")
 );
