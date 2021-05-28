@@ -6,10 +6,10 @@ import { useUserContext } from '../context/user_context';
 //...rest is gathering what is passed in the privateRoute
 // not to confuse with spread 
 const PrivateRoute = ({ children, ...rest }) => {
-  const { myUser } = useUserContext()
+  const { user } = useAuth0()
   //here is the spread operator
   return <Route {...rest} render={() => {
-    return myUser ? children : <Redirect to="/"></Redirect>
+    return user ? children : <Redirect to="/"></Redirect>
   }}></Route>;
 };
 export default PrivateRoute;
