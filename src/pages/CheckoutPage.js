@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const CheckoutPage = () => {
   const { cart } = useCartContext()
   return <main>
-    <PageHero title='checkout' />
+    <PageHero title='/checkout' />
     <Wrapper className="page">
       {cart.length < 1 ? (
         <div className="empty">
