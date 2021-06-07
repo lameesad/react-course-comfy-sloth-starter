@@ -38,9 +38,9 @@ function App() {
           <PrivateRoute exact path="/checkout">
             <Checkout />
           </PrivateRoute>
-          {/* <Route path="*">
-          <Error />
-        </Route> */}
+          <Route path="*">
+            <Error />
+          </Route>
         </switch>
         <Footer />
       </Router>
