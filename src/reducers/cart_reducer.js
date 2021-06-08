@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react'
+
 import {
   ADD_TO_CART,
   CLEAR_CART,

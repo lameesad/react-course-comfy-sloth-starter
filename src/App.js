@@ -10,7 +10,6 @@ import {
   Cart,
   Error,
   Checkout,
-  Private,
   AuthWrapper,
 } from "./pages";
 import PrivateRoute from "./pages/PrivateRoute";
