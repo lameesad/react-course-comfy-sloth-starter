@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
 const Stars = ({ stars, reviews }) => {
 
-
+  //we have 5 stars so the length is 5
+  // the second argument is the callback function that we call against every item
+  // _,: don't care about first item 
   const tempStars = Array.from({ length: 5 }, (_, index) => {
     // index 0 -4
     const number = index + 0.5;
@@ -14,7 +16,7 @@ const Stars = ({ stars, reviews }) => {
         ) : stars >= number ? (
           <BsStarHalf />
         ) : (<BsStar />
-            )}
+        )}
       </span>
     )
   });

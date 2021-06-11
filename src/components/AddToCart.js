@@ -10,6 +10,7 @@ const AddToCart = ({ product }) => {
   const { id, stock, colors } = product
 
   const [mainColor, setMainColor] = useState(colors[0])
+  //by default the amount will be 1
   const [amount, setAmount] = useState(1)
 
   const increase = () => {

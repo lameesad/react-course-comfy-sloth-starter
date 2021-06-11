@@ -8,8 +8,10 @@ import {
 } from '../actions'
 
 const cart_reducer = (state, action) => {
+
   if (action.type === ADD_TO_CART) {
     const { id, color, amount, product } = action.payload
+    // checking whether the item is new or increasing the amount of exisiting one
     const tempItem = state.cart.find((i) => i.id === id + color)
     if (tempItem) {
       const tempCart = state.cart.map((cartItem) => {
